@@ -229,6 +229,76 @@ Quantidade de horas trabalhadas: <input id="qnthoras" type="number"></br>
 		}
 	</script>
 
-<h2>Exercício 10 - </h2>
+<h2>Exercício 10 - Dia da Semana</h2>
+Digite um número de 1 a 7: <input id="dia" type="text">
+<button onClick="diasemana()">Qual o dia da semana?</button>
+	<script>
+		function diasemana() {
+			var dia = parseInt(document.getElementById("dia").value);
+			switch(dia) {
+				case 1: alert("Segunda-feira"); break;
+				case 2: alert("Terça-feira"); break;
+				case 3: alert("Quarta-feira"); break;
+				case 4: alert("Quinta-feira"); break;
+				case 5: alert("Sexta-feira"); break;
+				case 6: alert("Sábado"); break;
+				case 7: alert("Domingo"); break;
+				default: alert("Está não é uma opção válida.");
+			}
+		}
+	</script>
+
+<h2>Exercício 11 - Média e conceito</h2>
+Nota 1: <input id="notaUm" type="number"></br>
+Nota 2: <input id="notaDois" type="number"></br>
+<button onClick="medcon()">Qual a média?</button>
+	<script>
+		function medcon(){
+			notaUm = parseFloat(document.getElementById("notaUm").value);
+			notaDois = parseFloat(document.getElementById("notaDois").value);
+			var notaMedia = (notaUm + notaDois) / 2;
+			if (notaMedia < 4 && notaMedia >= 0) {
+				alert ("Notas: " + notaUm + " | " + notaDois + "\n\n" +
+					  "Média: " + notaMedia + "\n\n" +
+					  "REPROVADO com E");
+			}
+			if (notaMedia > 4 && notaMedia <= 6) {
+				alert ("Notas: " + notaUm + " | " + notaDois + "\n\n" +
+					  "Média: " + notaMedia + "\n\n" +
+					  "REPROVADO com D");
+			}
+			if (notaMedia > 6 && notaMedia <= 7.5) {
+				alert ("Notas: " + notaUm + " | " + notaDois + "\n\n" +
+					  "Média: " + notaMedia + "\n\n" +
+					  "APROVADO com C");
+			}
+			if (notaMedia > 7.5 && notaMedia <= 9) {
+				alert ("Notas: " + notaUm + " | " + notaDois + "\n\n" +
+					  "Média: " + notaMedia + "\n\n" +
+					  "APROVADO com B");
+			}
+			if (notaMedia > 9 && notaMedia <= 10) {
+				alert ("Notas: " + notaUm + " | " + notaDois + "\n\n" +
+					  "Média: " + notaMedia + "\n\n" +
+					  "APROVADO com A");
+			}
+		}
+	</script>
+
+<h2>Exercício 14 - Ano bissexto</h2>
+Digite um ano:<input id="anob" type="number">
+<button onclick="validarBi()">É ano bissexto?</button></br>
+Resposta: <div id="resposta" style="display: inline"></div>
+	<script>
+		function validarBi() {
+			var anob = parseInt(document.getElementById("anob").value);
+			var resposta = document.getElementById("resposta");
+				if ((anob % 400 == 0) || (anob % 4 == 0 && anob % 100 != 0)) {
+					resposta.innerHTML = 'É ano bissexto';
+				}else {
+						resposta.innerHTML = 'Não é ano bissexto';
+					}
+				}
+    </script>
 </body>
 </html>
