@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Curso JavaScript Progressivo</title>
+</head>
+<body>
+<h1>Exercícios</h1>
+	
+	
+<h2>Exercício 1 - Vogal ou Consoante</h2>
+Digite uma letra:<input id="letra" type="text">
+<button onclick="testar()">Vogal ou Consoante?</button>
+<script type="text/javascript">
+function testar(){
+var letra = document.getElementById("letra").value;
+	letra = letra.toLowerCase();
+if(letra=='a'||letra=='e'||letra=='i'||letra=='o'||letra=='u'){
+	alert("vogal");
+}
+	else {
+		alert("consoante");
+	}
+}
+</script>
+	
+<h2>Exercício 2 - Calcular média</h2>
+	Primeira nota:<input id="nota1" type="number"></br>
+	Segunda nota:<input id="nota2" type="number">
+	<button onClick="aprovado()">Aprovado?</button>
+	<script>
+		function aprovado() {
+			var nota1 = parseFloat(document.getElementById("nota1").value);
+			var nota2 = parseFloat(document.getElementById("nota2").value);
+			var media = (nota1 + nota2) / 2;
+			if (media<7) {
+				alert("Reprovado com média " + media);
+			}
+			else {
+				if (media==10) {
+					alert("Aprovado com Distinção! Média: " + media);
+				}
+				else {
+					alert("Aprovado com média: " + media);
+				}
+			} 
+		}
+	</script>
+	
+<h2>Exercício 3 - Maior número</h2>
+	Primeiro número: <input id="numero1" type="number"></br>
+	Segundo número: <input id="numero2" type="number"></br>
+	Terceiro número: <input id="numero3" type="number"></br>
+	<button onClick="maior()">Qual é o maior?</button>
+	<script>
+		function maior() {
+			var numero1 = parseFloat(document.getElementById("numero1").value);
+			var numero2 = parseFloat(document.getElementById("numero2").value);
+			var numero3 = parseFloat(document.getElementById("numero3").value);
+			var maior = numero1;
+			if (numero2 > numero1){
+				maior = numero2;
+			}
+			if (numero3 > maior) {
+				maior = numero3;
+			}
+			alert("O maior número é: " + maior);
+		}
+	</script>
+
+<h2>Exercício 4 - Invertendo valores de variáveis</h2>
+	Primeiro número inteiro: <input id="num1" type="number"></br>
+	Segundo número inteiro: <input id="num2" type="number"></br>
+	<button onClick="inverter()">Inverter números</button>
+	<script>
+		function inverter(){
+			var num1 = parseInt(document.getElementById("num1").value);
+			var num2 = parseInt(document.getElementById("num2").value);
+			var invert1 = num2;
+			var invert2 = num1;
+			alert("Antes: " + num1 + " / " + num2 + " Depois: " + invert1 + " / " + invert2);
+		}
+	</script>
+
+<h2>Exercício 5 - Maior e menor números</h2>
+	Primeiro número inteiro: <input id="n1" type="number"></br>
+	Segundo número inteiro: <input id="n2" type="number"></br>
+	Terceiro número inteiro: <input id="n3" type="number"></br>
+	<button onClick="maiornum()">Qual é o maior?</button>
+	<button onClick="menornum()">Qual é o menor?</button>
+	<script>
+		function maiornum(){
+			var n1 = parseInt(document.getElementById("n1").value);
+			var n2 = parseInt(document.getElementById("n2").value);
+			var n3 = parseInt(document.getElementById("n3").value);
+			var maior = n1;
+			if (n2 > n1) {
+				maior = n2;
+			}
+			if (n3 > maior){
+				maior = n3;
+			}
+			alert("O maior número é: " + maior);			
+		}
+		function menornum(){
+			var n1 = parseInt(document.getElementById("n1").value);
+			var n2 = parseInt(document.getElementById("n2").value);
+			var n3 = parseInt(document.getElementById("n3").value);
+			var menor = n1;
+			if (n2 < n1) {
+				menor = n2;
+			}
+			if (n3 < menor){
+				menor = n3;
+			}
+			alert("O menor número é: " + menor);			
+		}
+	</script>
+
+<h2>Exercício 6 - Ordem decrescente</h2>
+	Primeiro número inteiro: <input id="nUm" type="number"></br>
+	Segundo número inteiro: <input id="nDois" type="number"></br>
+	Terceiro número inteiro: <input id="nTres" type="number"></br>
+	<button onClick="decrescente()">Qual a ordem decrescente?</button>
+	<script>
+		function decrescente(){
+			var nUm = parseInt(document.getElementById("nUm").value);
+			var nDois = parseInt(document.getElementById("nDois").value);
+			var nTres = parseInt(document.getElementById("nTres").value);
+			if(nDois > nUm) {
+				var aux = nUm;
+				nUm = nDois;
+				nDois = aux;
+			}
+			if(nTres > nDois) {
+				var aux = nDois;
+				nDois = nTres;
+				nTres = aux;
+			}
+			if(nTres > nUm) {
+				var aux = nUm;
+				nUm = nTres;
+				nTres = aux;
+			}
+			alert(nUm + " - " + nDois + " - " + nTres);
+		}
+			
+	</script>
+
+<h2>Exercício 7 - Turno de estudo</h2>
+Em qual turno você estuda? (M-matutino ou V-Vespertino ou N- Noturno): <input id="turno" type="text"><button onClick="saudacao()">Enviar</button>
+	<script>
+		function saudacao(){
+			var turno = document.getElementById("turno").value;
+			turno = turno.toUpperCase();
+			switch(turno){
+				case 'M': alert("Bom dia");break;
+				case 'V': alert("Boa tarde");break;
+				case 'N': alert("Boa noite");break;
+				default: alert("Opção inválida");
+			}
+		}
+	</script>
+
+<h2>Exercício 8 - Aumento Salarial</h2>
+Salário atual do funcionário: <input id="satual" type="number"><button onClick="reajuste()">Enviar</button>
+	<script>
+		function reajuste(){
+			var satual = parseFloat(document.getElementById("satual").value);
+			if (satual <= 280) {
+				var reajuste = "20%"
+				var snovo = satual*1.2;
+				var aumento = snovo-satual;
+				alert("Salário atual: R$ " + satual + "\n\n" + "Reajuste: " + reajuste + "\n\n" + "Aumento: R$ " + aumento + "\n\n" + "Novo salário: R$ " + snovo);
+			}
+			if (satual > 280 && satual <= 700) {
+				var reajuste = "15%"
+				var snovo = satual*1.15;
+				var aumento = snovo-satual;
+				alert("Salário atual: R$ " + satual + "\n\n" + "Reajuste: " + reajuste + "\n\n" + "Aumento: R$ " + aumento + "\n\n" + "Novo salário: R$ " + snovo);
+			}
+			if (satual > 700 && satual <= 1500) {
+				var reajuste = "10%"
+				var snovo = satual*1.10;
+				var aumento = snovo-satual;
+				alert("Salário atual: R$ " + satual + "\n\n" + "Reajuste: " + reajuste + "\n\n" + "Aumento: R$ " + aumento + "\n\n" + "Novo salário: R$ " + snovo);
+			}
+			if (satual > 1500) {
+				var reajuste = "5%"
+				var snovo = satual*1.05;
+				var aumento = snovo-satual;
+				alert("Salário atual: R$ " + satual + "\n\n" + "Reajuste: " + reajuste + "\n\n" + "Aumento: R$ " + aumento + "\n\n" + "Novo salário: R$ " + snovo);
+			}
+		}
+	</script>
+
+<h2>Exercício 9 - Calculo Imposto de Renda</h2>
+Valor da hora de trabalho: <input id="valhora" type="number"></br>
+Quantidade de horas trabalhadas: <input id="qnthoras" type="number"></br>
+<button onClick="imposto()">Calcular Imposto de Renda</button>
+	<script>
+		function imposto() {
+			var valhora = parseFloat(document.getElementById("valhora").value);
+			var qnthoras = parseFloat(document.getElementById("qnthoras").value);
+			var salarioB = valhora * qnthoras;
+			var inss = salarioB*0.1;
+			var fgts = salarioB*0.11;
+			if (salarioB <= 900) {
+				var saliquido = salarioB - inss;
+						alert("Salário Bruto: (" + qnthoras + " * " + valhora + ") : R$" + salarioB + "\n\n" + "(-) IR (0%): R$ 00,00\n\n" + "(-) INSS ( 10%): R$" + inss + "\n\n" + "FGTS (11%): R$" + fgts + "\n\n" + "Total de Descontos: R$" + inss + "\n\n" + "Salário Líquido: R$" + saliquido);
+			}
+			if(salarioB > 900 && salarioB <= 1500){
+				var ir = salarioB * 0.05;
+				var descontos = inss + ir;
+				var saliquido = salarioB - descontos;
+						alert("Salário Bruto: (" + qnthoras + " * " + valhora + ") : R$" + salarioB + "\n\n" + "(-) IR (5%): R$" + ir + "\n\n" + "(-) INSS ( 10%): R$" + inss + "\n\n" + "FGTS (11%): R$" + fgts + "\n\n" + "Total de Descontos: R$" + descontos + "\n\n" + "Salário Líquido: R$" + saliquido);
+			}
+			if(salarioB > 1500 && salarioB <= 2500){
+				var ir = salarioB * 0.10;
+				var descontos = inss + ir;
+				var saliquido = salarioB - descontos;
+						alert("Salário Bruto: (" + qnthoras + " * " + valhora + ") : R$" + salarioB + "\n\n" + "(-) IR (10%): R$" + ir + "\n\n" + "(-) INSS ( 10%): R$" + inss + "\n\n" + "FGTS (11%): R$" + fgts + "\n\n" + "Total de Descontos: R$" + descontos + "\n\n" + "Salário Líquido: R$" + saliquido);
+			}
+			if(salarioB > 2500){
+				var ir = salarioB * 0.20;
+				var descontos = inss + ir;
+				var saliquido = salarioB - descontos;
+						alert("Salário Bruto: (" + qnthoras + " * " + valhora + ") : R$" + salarioB + "\n\n" + "(-) IR (20%): R$" + ir + "\n\n" + "(-) INSS ( 10%): R$" + inss + "\n\n" + "FGTS (11%): R$" + fgts + "\n\n" + "Total de Descontos: R$" + descontos + "\n\n" + "Salário Líquido: R$" + saliquido);
+			}
+		}
+	</script>
+
+</body>
+</html>
