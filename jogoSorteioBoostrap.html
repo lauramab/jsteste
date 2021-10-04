@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jogo Acerte o número sorteado</title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  </head>
+  <body>
+	  <section class="container-sm text-center">
+		  
+		  <header style="padding: 30px 0">
+		  
+		 	 <h2 class="display-4">Um número foi sorteado, tente adivinhar!</h2>
+		
+		  </header>
+		  
+		  <div class="input-group mb-3">
+			  <span class="input-group-text" id="basic-addon1">Número de 1 a 100</span>
+			  <input id="num" class="form-control" type="number">
+			  <button type="button" class="btn btn-primary" onclick="sorteio()">Testar</button>
+		  </div>
+		  
+		  <div class="input-group mb-3">
+			  
+			  <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 50%;">
+				  <div class="card-body">
+					  <h5 class="card-title">Tentativas</h5>
+					  <h2 id="tentativas" class="card-text"></h2>
+				  </div>
+			  </div>
+			  
+			  <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 50%;">
+				  <div class="card-body">
+					  <h5 class="card-title">Dicas</h5>
+					  <p id="dica" class="card-text"></p>
+				  </div>
+			  </div>
+		  
+		  </div>
+			  
+			  </div>
+		  
+		  </div>
+	  
+	  <button type="button" class="btn btn-primary" onclick="window.location.reload()">Reiniciar</button>
+
+	</section>
+												
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.4.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.4.1.js"></script>
+	<script src="js/jscript.js"></script>
+  </body>
+</html>
