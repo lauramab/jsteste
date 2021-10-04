@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>While & For - JS</title>
+</head>
+	<h2>While</h2>
+	<button onClick="contar()">Contar</button></br>
+	
+<script type="text/javascript">
+	function contar(){
+		count = 1;
+		while (count<=100){
+			if(count%3 == 0)
+				document.writeln(count+"<br />");
+				count = count + 1;
+			}
+		}
+</script>
+
+<h2>For</h2>
+<button onclick="contar()">Contar</button><br />
+<script type="text/javascript">
+	function contar(){
+		for(var count=0 ; count<=10 ; count++){
+		document.write(count+"<br />");
+		}
+	}
+</script>
+
+<h2>Do While</h2>
+<p><button onclick="entrar()">Entrar</button></p>
+<script>
+	function entrar(){
+		var senha = '';
+		do{
+			senha = prompt("Digite sua senha: ");
+			if(senha=='2112js')
+				alert("Entrando no sistema...");
+			else
+				alert("Senha invalida, tente novamente!");
+		}while(senha !='2112js');
+	}
+</script>
+
+<h2>Break</h2>
+<button onclick="teste()">Buscar</button><br />
+Resultado: <div id="resposta">
+<script>
+	function teste(){
+		var resposta = document.getElementById('resposta');
+		var texto='';
+		for(var count=1 ; true ; count++){
+			if(count%11==0 && count%13==0){
+				texto+=count;
+				break;
+			}
+			else
+				texto+=count+"-";
+		}
+		resposta.innerHTML = texto;
+	}
+</script>
+	
+	<script type="text/javascript">
+document.write("O quadrado de 2 é: ");
+document.write( quadrado(2) );
+function quadrado(numero)
+{
+var resposta = numero * numero;
+return resposta;
+}
+</script>
+</html>
