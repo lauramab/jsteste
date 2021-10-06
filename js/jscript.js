@@ -11,12 +11,12 @@ function sorteio() {
 }
 function teste(x){
 			if(x<numero)
-			return "Seu numero é <em>menor</em> que o sorteado";
+			return "O número sorteado é <em>maior</em> que este";
 			else
 			if(x>numero)
-			return "Seu numero é <em>maior</em> que o sorteado";
+			return "O número sorteado é <em>menor</em> que este";
 			else
-			return ("<em>Parabéns!</em> Acertou, a resposta era " + numero);
+			return ("<em>Parabéns!</em> Acertou, o número sorteado foi " + numero);
 }
 function converter(){
 			var num = parseFloat(document.getElementById("num").value);
@@ -33,4 +33,19 @@ function ctof(x){
 }
 function ftoc(x){
 			return((x-32)*5/9);
+}
+function mediaAlunos(){
+			var alunos = parseInt(prompt("Número de alunos: "));
+			var vetor = new Array(alunos);
+			//preencher o vetor
+			for(let count=0; count<alunos; count++){
+				vetor[count] = parseInt(prompt("Aluno " + (count+1) + ":"));
+			}
+			//somar notas
+			var soma = 0;
+			for(let count in vetor) {
+				soma += vetor[count];
+			}
+			var media = soma / alunos;
+			document.write("Média dos alunos: " + media);
 }
