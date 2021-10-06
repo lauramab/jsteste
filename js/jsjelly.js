@@ -35,7 +35,7 @@ function leoOuGi()
 		document.write(vezDeQuem[i]);
 	}*/
 	
-	//printar a última posição de vezDeQuem
+	//printar
 	var ultimo = vezDeQuem[vezDeQuem.length - 1];
 	var dataHoje = new Date();
 	var dataHojeFormat = ((dataHoje.getDate() )) + "/" + ((dataHoje.getMonth() + 1)) + "/" + dataHoje.getFullYear();	
@@ -43,5 +43,38 @@ function leoOuGi()
 	var respData = document.getElementById('mostraData');
 	resp.innerHTML = ultimo;
 	respData.innerHTML = dataHojeFormat;
+	
+	//acessar últimos 3 nomes
+	var nomesReverse = nomes.reverse();
+	var ultimos3nomes = nomesReverse.slice(0, 3);
+	ultimos3nomes = ultimos3nomes.reverse();
+	
+	//mostrar status
+	var status1 = document.getElementById('mostraStatus1');
+	var status2 = document.getElementById('mostraStatus2');
+	var status3 = document.getElementById('mostraStatus3');
+	var alerta = document.getElementById('alerta');
+	
+	
+		if (ultimos3nomes[0] != ultimos3nomes[1]){
+			status1.innerHTML = ('<i class="bi bi-check-circle-fill text-primary"></i>');
+			status2.innerHTML = ('<i class="bi bi-check-circle-fill text-primary"></i>');
+			status3.innerHTML = ('<i class="bi bi-check-circle text-primary"></i>');
+		}else {
+			if (ultimos3nomes[0] == ultimos3nomes[1] && ultimos3nomes[0] == ultimos3nomes[2]) {
+			status1.innerHTML = ('<i class="bi bi-check-circle-fill text-primary"></i>');
+			status2.innerHTML = ('<i class="bi bi-check-circle-fill text-primary"></i>');
+			status3.innerHTML = ('<i class="bi bi-check-circle-fill text-primary"></i>');
+			alerta.innerHTML = ('<div style="padding-bottom: 30px"><p id="alerta" class="display-4 form-control" style="width:250px; margin: auto;">hoje é dia de lavar tudo  <i class="bi bi-emoji-wink"></i></p></div>')
+		}else {
+			status1.innerHTML = ('<i class="bi bi-check-circle-fill text-primary"></i>');
+			status2.innerHTML = ('<i class="bi bi-check-circle text-primary"></i>');
+			status3.innerHTML = ('<i class="bi bi-check-circle text-primary"></i>');
+		}
+		}
+		
+		
+	
+	
 }
 // JavaScript Document
