@@ -37,7 +37,11 @@ function leoOuGi()
 	
 	//printar a última posição de vezDeQuem
 	var ultimo = vezDeQuem[vezDeQuem.length - 1];
+	var dataHoje = new Date();
+	var dataHojeFormat = ((dataHoje.getDate() )) + "/" + ((dataHoje.getMonth() + 1)) + "/" + dataHoje.getFullYear();	
 	var resp = document.getElementById('resposta');
+	var respData = document.getElementById('mostraData');
 	resp.innerHTML = ultimo;
+	respData.innerHTML = dataHojeFormat;
 }
 // JavaScript Document
